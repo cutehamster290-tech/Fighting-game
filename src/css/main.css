@@ -1,0 +1,19 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+}
+
+body { background-color: #f5c6c6; }
+
+button {
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: clamp(1rem, 100%, 200%);
+    background-color: rgba(255, 255, 255, 0.644);
+
+    &:hover { background-color: rgba(255, 255, 255, 0.375); }
+}

@@ -1,24 +1,20 @@
 import {StrictMode, useState} from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
+import {Game} from './Game.tsx'
+import {Menu} from './Menu.tsx'
+import './css/main.css'
 
-const App = () => {
-  const [mode, setMode] = useState('Easy')
+function App() {
+  let [opened, setOpened] = useState('Menu')
 
   return (
-    <div id="Main">
-      <div id='Mode'>
-        <button onClick={() => setMode('Easy')}>Easy</button>
-        <button onClick={() => setMode('Normal')}>Normal</button>
-        <button onClick={() => setMode('Hard')}>Hard</button>
-      </div>
-      <h3 id='modeDisplay'>Chosen Mode: {mode}</h3>
-    </div>
+    <StrictMode>
+      {opened == 'Game' && <Game />}
+      {opened == 'Menu' && <Menu changeScreen={setOpened}/>}
+    </StrictMode>
   )
 }
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>
+  <App />
 )
