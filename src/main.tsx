@@ -1,26 +1,19 @@
-import {StrictMode, useEffect, useRef} from 'react'
+import {StrictMode, useState} from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 
 const App = () => {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null)
-
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
-
-    ctx.fillStyle = '#111'
-    ctx.fillRect(0, 0, canvas.width, canvas.height)
-
-    ctx.fillStyle = 'red'
-    ctx.fillRect(100, 100, 40, 100)
-  })
+  const [mode, setMode] = useState('Easy')
 
   return (
-    <canvas ref={canvasRef}></canvas>
+    <div id="Main">
+      <div id='Mode'>
+        <button onClick={() => setMode('Easy')}>Easy</button>
+        <button onClick={() => setMode('Normal')}>Normal</button>
+        <button onClick={() => setMode('Hard')}>Hard</button>
+      </div>
+      <h3 id='modeDisplay'>Chosen Mode: {mode}</h3>
+    </div>
   )
 }
 

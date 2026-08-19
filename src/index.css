@@ -1,20 +1,50 @@
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+body { background-color: #f5c6c6; }
 
 #root {
-    width: 100dvw;
-    height: 100dvh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
-canvas {
-    width: 98%;
-    height: 98%;
-    border: 2px solid white;
-    background-color: #222;
+#Main {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-content: center;
+
+    h3 {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+#Mode {
+    width: 98dvw;
+    height: 10dvh;
+    margin: 5px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3%;
+
+    button {
+        width: 100%;
+        height: 100%;
+        font-size: 120%;
+        background-color: rgba(255, 255, 255, 0.644);
+        border-radius: 5px;
+        transform: scale(.8);
+
+        border: none;
+        cursor: pointer;
+
+        &:hover { background-color: rgba(255, 255, 255, 0.375); }
+    }
 }
