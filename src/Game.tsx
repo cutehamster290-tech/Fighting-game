@@ -1,7 +1,11 @@
+import Stickman from './Stickman'
+import {Stage, Layer} from 'react-konva'
 import './css/Game.css'
 
 export function Game() {
     const Abilities = ['Attack', 'Defend', 'Regen']
+    const w = window.innerWidth
+    const h = 400
 
     return (
         <div id="Game">
@@ -10,7 +14,12 @@ export function Game() {
                     <button key={a}>{a}</button>
                 ))}
             </div>
-            <canvas></canvas>
+            <Stage id='Stage' width={w} height={h}>
+                <Layer>
+                    <Stickman x={150} y={180} color="#333"/>
+                    <Stickman x={450} y={180} color="#d9534f"/>
+                </Layer>
+            </Stage>
         </div>
     )
 }
