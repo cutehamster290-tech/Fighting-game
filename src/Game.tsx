@@ -4,7 +4,7 @@ export function Game() {
     const Abilities = ['Attack', 'Defend', 'Regen']
 
     return (
-        <div id="Main">
+        <div id="Game">
             <div id="Abilities">
                 {Abilities.map((a) => (
                     <button key={a}>{a}</button>

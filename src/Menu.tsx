@@ -20,7 +20,7 @@ export const Menu = ({ changeScreen }: cs) => {
     }
 
   return (
-    <div id="Main">
+    <div id="Menu">
       <div id='Mode'> {Modes.map((m) => (
             <button key={m} onClick={() => changeMode(m)}>{m}</button>
         ))}
